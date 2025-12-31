@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register Complaint</title>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpK9DQNr7AXDfZGjtUzysmqFDZD-22tJU"></script>
+
+</head>
+<body>
+
+<h2>Register Complaint</h2>
+
+<textarea id="text" placeholder="Enter complaint"></textarea>
+<br><br>
+
+<div id="map" style="height:400px;width:100%;"></div>
+
+<button onclick="submitComplaint()">Submit</button>
+
+<script>
+let marker;
+let selectedLat, selectedLng;
+
+function initMap() {
+  const center = { lat: 13.0827, lng: 80.2707 };
+
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 13,
+    center: center,
+  });
+
+  map.addListener("click", (e) => {
+    selectedLat = e.latLng.lat();
+    selectedLng = e.latLng.lng();
+
+    if (marker) marker.setMap(null);
+
+    marker = new google.maps.Marker({
+      position: e.latLng,
+      map: map
+    });
+  });
+}
+
+function submitComplaint() {
+  fetch("http://127.0.0.1:8000/complaint", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      text: document.getElementById("text").value,
+      latitude: selectedLat,
+      longitude: selectedLng
+    })
+  })
+  .then(res => res.json())
+  .then(data => alert("Priority: " + data.priority));
+}
+
+initMap();
+</script>
+
+</body>
+</html>
