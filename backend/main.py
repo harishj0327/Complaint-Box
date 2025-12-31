@@ -1,28 +1,40 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-import pickle
-
-# Load AI model and vectorizer
-model = pickle.load(open("model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+from services.classify import predict_category
+from services.priority import assign_priority
+from services.geo import is_within_radius
 
 app = FastAPI()
 
-# Request body format
-class Complaint(BaseModel):
-    text: str
+complaints_db = []
 
-@app.get("/")
-def home():
-    return {"message": "AI Civic Issue Resolver Backend Running"}
+@app.post("/complaint")
+def register_complaint(
+    text: str,
+    latitude: float,
+    longitude: float
+):
+    category = predict_category(text)
 
-@app.post("/predict")
-def predict_category(complaint: Complaint):
-    text = [complaint.text]
-    text_vectorized = vectorizer.transform(text)
-    prediction = model.predict(text_vectorized)[0]
+    # count similar complaints
+    similar_count = 0
+    for c in complaints_db:
+        if c["category"] == category:
+            if is_within_radius(
+                latitude, longitude,
+                c["latitude"], c["longitude"]
+            ):
+                similar_count += 1
 
-    return {
-        "complaint": complaint.text,
-        "predicted_category": prediction
+    priority = assign_priority(similar_count + 1)
+
+    complaint = {
+        "text": text,
+        "category": category,
+        "priority": priority,
+        "latitude": latitude,
+        "longitude": longitude
     }
+
+    complaints_db.append(complaint)
+
+    return complaint
