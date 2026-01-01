@@ -1,62 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Register Complaint</title>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpK9DQNr7AXDfZGjtUzysmqFDZD-22tJU"></script>
+  <meta charset="UTF-8">
+  <title>Smart Complaint Box</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
 </head>
+
 <body>
 
-<h2>Register Complaint</h2>
+  <div class="container">
+    <h1>📢 Smart Complaint Box</h1>
+    <p class="subtitle">
+      Report issues easily. We’ll prioritize them intelligently.
+    </p>
 
-<textarea id="text" placeholder="Enter complaint"></textarea>
-<br><br>
+    <label>📝 Complaint Description</label>
+    <textarea id="text" placeholder="Describe the issue in detail..."></textarea>
 
-<div id="map" style="height:400px;width:100%;"></div>
+    <label>📍 Select Location on Map</label>
+    <div id="map"></div>
 
-<button onclick="submitComplaint()">Submit</button>
+    <label>📷 Upload Photo (optional)</label>
+    <input type="file" id="photo" accept="image/*">
 
-<script>
-let marker;
-let selectedLat, selectedLng;
+    <button onclick="submitComplaint()">🚀 Submit Complaint</button>
 
-function initMap() {
-  const center = { lat: 13.0827, lng: 80.2707 };
+    <div id="result">
+      <h3>✅ Complaint Registered</h3>
+      <p><strong>Category:</strong> <span id="category"></span></p>
+      <p><strong>Priority:</strong> <span id="priority"></span></p>
+    </div>
+  </div>
 
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
-    center: center,
-  });
-
-  map.addListener("click", (e) => {
-    selectedLat = e.latLng.lat();
-    selectedLng = e.latLng.lng();
-
-    if (marker) marker.setMap(null);
-
-    marker = new google.maps.Marker({
-      position: e.latLng,
-      map: map
-    });
-  });
-}
-
-function submitComplaint() {
-  fetch("http://127.0.0.1:8000/complaint", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      text: document.getElementById("text").value,
-      latitude: selectedLat,
-      longitude: selectedLng
-    })
-  })
-  .then(res => res.json())
-  .then(data => alert("Priority: " + data.priority));
-}
-
-initMap();
-</script>
-
+  <!-- JS -->
+  <script src="complaint.js"></script>
 </body>
 </html>
