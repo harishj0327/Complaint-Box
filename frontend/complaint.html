@@ -27,7 +27,8 @@
       Report issues easily. We’ll prioritize them intelligently.
     </p>
 
-    <form id="complaintForm">
+    <div id="complaintForm">
+
 
       <label>📝 Complaint Description</label>
       <textarea
@@ -42,11 +43,10 @@
       <label>📷 Upload Photo (optional)</label>
       <input type="file" id="photo" accept="image/*">
 
-      <button id="submitBtn" type="submit">
-        🚀 Submit Complaint
+      <button id="submitBtn" type="button">
+      🚀 Submit Complaint
       </button>
-
-    </form>
+      </div>
 
     <div id="result" style="display:none;">
       <h3>✅ Complaint Registered</h3>

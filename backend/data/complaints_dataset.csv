@@ -1,9 +1,801 @@
 text,category
-"Potholes near main road","Road"
-"Road damaged after rain","Road"
-"Water leakage from pipeline","Water"
-"No water supply for two days","Water"
-"Drainage overflow near hospital","Drainage"
-"Garbage not collected for a week","Garbage"
-"Electricity power cut frequently","Electricity"
-"Street lights not working","Electricity"
+Inga current frequent ah pogudhu romba kashtam,Electricity
+Enga area la street light work aagala daily nadakudhu,Electricity
+Enga area la power cut daily nadakudhu romba problem iruku,Electricity
+Recent ah power cut daily nadakudhu daily nadakudhu,Electricity
+Frequent garbage issue in street near my house,Garbage
+Severe garbage piled on road near bus stand,Garbage
+Complaint regarding sewage overflow in our street,Drainage
+Frequent municipal waste problem in this locality,Garbage
+Inga sewage problem iruku seekram solve pannunga,Drainage
+There is bad smell from drainage near my house,Drainage
+Namma street la waste bin overflow aagudhu seekram solve pannunga,Garbage
+Issue of drainage water on road in my area,Drainage
+Recent ah current frequent ah pogudhu romba problem iruku,Electricity
+Frequent street lights not working near bus stand,Electricity
+Severe water shortage near bus stand,Water
+Enga area la water supply varala many days ah,Water
+Enga area la garbage smell romba iruku many days ah,Garbage
+Severe potholes on road in my area,Road
+Namma street la sewage water road la odudhu romba problem iruku,Drainage
+Frequent sewage water leakage in our street,Drainage
+Frequent trash problem near my house,Garbage
+Severe electricity outage near my house,Electricity
+Complaint regarding waste dumped near house near bus stand,Garbage
+Frequent tap water not coming for many days,Water
+Complaint regarding potholes on road in this locality,Road
+Indha area la trash road la iruku daily nadakudhu,Garbage
+Issue of cracks on main road near my house,Road
+There is electricity problem in my area,Electricity
+There is clogged drainage in my area,Drainage
+Issue of frequent power issue in our street,Electricity
+Severe water leakage from pipe near my house,Water
+There is bad smell from drainage in our street,Drainage
+Complaint regarding road not motorable near my house,Road
+There is waste collection delay in my area,Garbage
+Enga area la drainage block aagi iruku daily nadakudhu,Drainage
+Recent ah electricity supply illa daily nadakudhu,Electricity
+Complaint regarding bad road condition in this locality,Road
+Enga area la power cut daily nadakudhu many days ah,Electricity
+There is power cut frequently in this locality,Electricity
+Frequent municipal waste problem in this locality,Garbage
+Facing tap water not coming in my area,Water
+There is garbage not collected for many days,Garbage
+Namma street la drainage block aagi iruku many days ah,Drainage
+Issue of no water supply for many days,Water
+Severe municipal waste problem near bus stand,Garbage
+Issue of drainage water on road in this locality,Drainage
+Inga road full ah holes iruku romba problem iruku,Road
+Inga garbage collect panala romba problem iruku,Garbage
+Recent ah pipe leak aagudhu romba kashtam,Water
+Facing power shutdown for many days,Electricity
+Indha area la street road correct illa many days ah,Road
+Indha area la power cut daily nadakudhu seekram solve pannunga,Electricity
+Facing trash overflow near bus stand,Garbage
+Recent ah trash road la iruku romba problem iruku,Garbage
+Severe uneven road condition in this locality,Road
+Indha area la water shortage romba naal ah daily nadakudhu,Water
+Facing drinking water problem near my house,Water
+Issue of frequent power issue near bus stand,Electricity
+Frequent street lights not working in this locality,Electricity
+Recent ah electricity supply illa many days ah,Electricity
+Complaint regarding garbage issue in street near bus stand,Garbage
+Inga drainage smell romba mosam romba problem iruku,Drainage
+Severe frequent power issue in our street,Electricity
+Facing drainage pipe broken near my house,Drainage
+Recent ah sewage water road la odudhu romba problem iruku,Drainage
+Indha area la drainage overflow aagudhu daily nadakudhu,Drainage
+Frequent garbage not collected in our street,Garbage
+There is broken road surface in our street,Road
+Frequent water problem in area for many days,Water
+Issue of water leakage from pipe in our street,Water
+Inga voltage romba fluctuation many days ah,Electricity
+Recent ah drainage block aagi iruku daily nadakudhu,Drainage
+Severe garbage issue in street near my house,Garbage
+Enga area la water shortage romba naal ah romba kashtam,Water
+Facing voltage fluctuation issue in our street,Electricity
+Frequent trash overflow in this locality,Garbage
+Indha area la garbage smell romba iruku seekram solve pannunga,Garbage
+Inga voltage romba fluctuation romba kashtam,Electricity
+Frequent waste collection delay near my house,Garbage
+Facing voltage fluctuation issue for many days,Electricity
+Complaint regarding frequent power issue near bus stand,Electricity
+Complaint regarding drainage blocked in our street,Drainage
+Frequent drainage blocked in my area,Drainage
+There is low water pressure for many days,Water
+Indha area la sewage problem iruku seekram solve pannunga,Drainage
+Inga drinking water problem iruku daily nadakudhu,Water
+Facing clogged drainage in this locality,Drainage
+Facing water overflow from pipeline near bus stand,Water
+Issue of road causing traffic near my house,Road
+Severe water shortage in our street,Water
+Issue of uneven road condition near bus stand,Road
+Complaint regarding water shortage for many days,Water
+Recent ah water supply varala romba problem iruku,Water
+Complaint regarding drainage water on road near my house,Drainage
+Namma street la pipe leak aagudhu many days ah,Water
+Facing garbage not collected in this locality,Garbage
+Inga water supply varala romba kashtam,Water
+Recent ah drainage smell romba mosam many days ah,Drainage
+Recent ah street light work aagala romba problem iruku,Electricity
+There is potholes on road for many days,Road
+Facing road full of holes near my house,Road
+Severe electricity problem for many days,Electricity
+Complaint regarding current not available in my area,Electricity
+Facing drainage pipe broken near bus stand,Drainage
+Indha area la garbage collect panala seekram solve pannunga,Garbage
+Severe no electricity supply in our street,Electricity
+There is trash problem in this locality,Garbage
+Severe road not motorable near bus stand,Road
+Complaint regarding waste bin overflowing for many days,Garbage
+Complaint regarding trash overflow in our street,Garbage
+Recent ah street road correct illa daily nadakudhu,Road
+Recent ah power cut daily nadakudhu seekram solve pannunga,Electricity
+Frequent uneven road condition in this locality,Road
+Complaint regarding electricity outage for many days,Electricity
+Inga drainage block aagi iruku seekram solve pannunga,Drainage
+There is potholes on road in my area,Road
+Frequent no water supply in this locality,Water
+Frequent street road damaged near bus stand,Road
+Issue of waste collection delay near my house,Garbage
+There is drainage water on road in my area,Drainage
+Severe pipe burst issue near bus stand,Water
+Frequent power failure in this locality,Electricity
+Enga area la waste bin overflow aagudhu romba problem iruku,Garbage
+Recent ah drainage block aagi iruku romba problem iruku,Drainage
+Facing power failure near my house,Electricity
+There is garbage issue in street in this locality,Garbage
+Recent ah road full ah holes iruku daily nadakudhu,Road
+Frequent electricity problem in our street,Electricity
+Facing electricity outage near my house,Electricity
+Facing drainage blocked in our street,Drainage
+Frequent street lights not working near bus stand,Electricity
+Frequent drainage issue in street in this locality,Drainage
+Severe drainage blocked in my area,Drainage
+Complaint regarding drainage overflow in our street,Drainage
+Enga area la sewage water road la odudhu daily nadakudhu,Drainage
+Issue of power failure near bus stand,Electricity
+Namma street la pipe leak aagudhu romba kashtam,Water
+Frequent sewage water leakage in our street,Drainage
+Issue of garbage smell issue in this locality,Garbage
+Inga water supply varala seekram solve pannunga,Water
+Recent ah garbage collect panala romba kashtam,Garbage
+Issue of trash problem in this locality,Garbage
+Complaint regarding drainage water on road in our street,Drainage
+Indha area la road damage aagi iruku romba problem iruku,Road
+Facing uneven road condition in this locality,Road
+There is waste dumped near house near my house,Garbage
+Issue of garbage piled on road in my area,Garbage
+There is irregular water supply in this locality,Water
+Issue of broken road surface in our street,Road
+Facing sewage water leakage in our street,Drainage
+Severe voltage fluctuation issue in this locality,Electricity
+Namma street la voltage romba fluctuation seekram solve pannunga,Electricity
+Recent ah street road correct illa seekram solve pannunga,Road
+Complaint regarding sewage water leakage in this locality,Drainage
+Facing pipe burst issue in my area,Water
+Severe garbage smell issue in our street,Garbage
+Frequent no water supply for many days,Water
+Enga area la street light work aagala many days ah,Electricity
+Recent ah road damage aagi iruku seekram solve pannunga,Road
+Inga voltage romba fluctuation seekram solve pannunga,Electricity
+Severe road causing traffic in our street,Road
+Frequent uneven road condition near my house,Road
+Frequent no water supply in this locality,Water
+Issue of clogged drainage in this locality,Drainage
+Indha area la street light work aagala seekram solve pannunga,Electricity
+Facing clogged drainage in this locality,Drainage
+Recent ah road la romba potholes iruku romba kashtam,Road
+Facing current not available in this locality,Electricity
+Frequent sewage water leakage in our street,Drainage
+Frequent frequent power issue in our street,Electricity
+Frequent sewage problem for many days,Drainage
+There is irregular water supply for many days,Water
+Issue of road not motorable near my house,Road
+Namma street la drainage smell romba mosam seekram solve pannunga,Drainage
+Recent ah electricity supply illa romba kashtam,Electricity
+Frequent current not available near my house,Electricity
+Inga pipe leak aagudhu seekram solve pannunga,Water
+Recent ah drinking water problem iruku romba problem iruku,Water
+Facing garbage not collected in our street,Garbage
+Recent ah garbage smell romba iruku romba problem iruku,Garbage
+Facing electricity problem in this locality,Electricity
+Severe sewage problem in my area,Drainage
+Facing trash overflow in this locality,Garbage
+Severe pipe burst issue for many days,Water
+Issue of clogged drainage in my area,Drainage
+Inga drinking water problem iruku romba problem iruku,Water
+Frequent bad road condition near my house,Road
+Facing drainage issue in street near my house,Drainage
+Namma street la sewage problem iruku seekram solve pannunga,Drainage
+Severe power shutdown near my house,Electricity
+Facing irregular water supply in my area,Water
+Frequent road full of holes near bus stand,Road
+Inga waste bin overflow aagudhu romba kashtam,Garbage
+Recent ah electricity supply illa romba kashtam,Electricity
+Frequent no water supply for many days,Water
+Indha area la tap la water varala daily nadakudhu,Water
+There is irregular water supply in my area,Water
+Complaint regarding water overflow from pipeline near my house,Water
+There is power failure in my area,Electricity
+Severe garbage not collected near bus stand,Garbage
+Frequent garbage issue in street for many days,Garbage
+Recent ah road full ah holes iruku romba kashtam,Road
+Enga area la tap la water varala romba problem iruku,Water
+Inga street light work aagala seekram solve pannunga,Electricity
+Facing municipal waste problem in this locality,Garbage
+Frequent voltage fluctuation issue for many days,Electricity
+There is sewage problem near my house,Drainage
+Facing road full of holes near bus stand,Road
+Complaint regarding municipal waste problem in our street,Garbage
+Frequent water shortage near bus stand,Water
+There is power shutdown near bus stand,Electricity
+Issue of water overflow from pipeline in my area,Water
+Issue of irregular water supply near bus stand,Water
+There is drinking water problem for many days,Water
+Indha area la road full ah holes iruku romba kashtam,Road
+Indha area la drinking water problem iruku romba kashtam,Water
+Complaint regarding garbage piled on road for many days,Garbage
+Complaint regarding potholes on road near my house,Road
+Recent ah garbage collect panala daily nadakudhu,Garbage
+Facing waste collection delay in my area,Garbage
+Facing waste collection delay in my area,Garbage
+Complaint regarding municipal waste problem in my area,Garbage
+Issue of pipe burst issue in this locality,Water
+There is waste bin overflowing near my house,Garbage
+Facing current not available near bus stand,Electricity
+There is sewage water leakage in our street,Drainage
+Enga area la main road romba mosama iruku seekram solve pannunga,Road
+Issue of power cut frequently in this locality,Electricity
+Enga area la waste bin overflow aagudhu many days ah,Garbage
+There is frequent power issue for many days,Electricity
+Enga area la power cut daily nadakudhu romba problem iruku,Electricity
+Complaint regarding no electricity supply near my house,Electricity
+Issue of potholes on road near my house,Road
+Issue of waste bin overflowing in my area,Garbage
+Enga area la water supply varala daily nadakudhu,Water
+Indha area la street light work aagala many days ah,Electricity
+Severe frequent power issue near bus stand,Electricity
+Recent ah trash road la iruku romba problem iruku,Garbage
+Enga area la street light work aagala romba problem iruku,Electricity
+Enga area la road full ah holes iruku romba kashtam,Road
+Complaint regarding power shutdown near my house,Electricity
+Frequent no electricity supply for many days,Electricity
+Issue of municipal waste problem in our street,Garbage
+Enga area la drainage smell romba mosam seekram solve pannunga,Drainage
+Indha area la main road romba mosama iruku seekram solve pannunga,Road
+Frequent broken road surface near my house,Road
+Complaint regarding bad road condition near bus stand,Road
+Recent ah sewage problem iruku many days ah,Drainage
+Issue of drainage issue in street near my house,Drainage
+Inga waste bin overflow aagudhu romba problem iruku,Garbage
+Complaint regarding tap water not coming in our street,Water
+Issue of waste collection delay in my area,Garbage
+There is no water supply near my house,Water
+Facing pipe burst issue in my area,Water
+Facing frequent power issue near my house,Electricity
+Issue of drainage overflow near bus stand,Drainage
+Namma street la water supply varala romba problem iruku,Water
+Severe drainage issue in street in my area,Drainage
+There is sewage overflow in this locality,Drainage
+Severe water leakage from pipe near bus stand,Water
+Facing garbage piled on road near my house,Garbage
+Issue of frequent power issue in our street,Electricity
+Enga area la power cut daily nadakudhu many days ah,Electricity
+Enga area la drainage smell romba mosam romba problem iruku,Drainage
+There is drainage pipe broken near bus stand,Drainage
+There is drainage pipe broken in this locality,Drainage
+Enga area la waste bin overflow aagudhu daily nadakudhu,Garbage
+Indha area la road full ah holes iruku daily nadakudhu,Road
+Inga street road correct illa seekram solve pannunga,Road
+Complaint regarding sewage problem in my area,Drainage
+Severe garbage smell issue for many days,Garbage
+Inga main road romba mosama iruku romba kashtam,Road
+Inga garbage issue iruku many days ah,Garbage
+Complaint regarding road full of holes near bus stand,Road
+Inga water shortage romba naal ah many days ah,Water
+Frequent power cut frequently near bus stand,Electricity
+Severe broken road surface in my area,Road
+There is clogged drainage for many days,Drainage
+There is drainage pipe broken near my house,Drainage
+Inga garbage smell romba iruku daily nadakudhu,Garbage
+Severe pipe burst issue near bus stand,Water
+Complaint regarding drainage water on road near my house,Drainage
+Severe road not motorable in our street,Road
+Facing trash problem in our street,Garbage
+Facing garbage issue in street near bus stand,Garbage
+Facing drainage water on road in my area,Drainage
+Complaint regarding drainage issue in street in my area,Drainage
+Enga area la electricity supply illa romba problem iruku,Electricity
+Inga road la romba potholes iruku seekram solve pannunga,Road
+Facing drainage water on road for many days,Drainage
+There is frequent power issue near my house,Electricity
+Recent ah water supply varala romba problem iruku,Water
+Complaint regarding municipal waste problem in this locality,Garbage
+There is drainage pipe broken near my house,Drainage
+Issue of no electricity supply in this locality,Electricity
+Inga voltage romba fluctuation daily nadakudhu,Electricity
+Indha area la trash road la iruku seekram solve pannunga,Garbage
+Indha area la voltage romba fluctuation daily nadakudhu,Electricity
+Complaint regarding bad road condition near my house,Road
+There is electricity problem near my house,Electricity
+Severe garbage issue in street in our street,Garbage
+Frequent street road damaged in our street,Road
+Complaint regarding power cut frequently in this locality,Electricity
+Severe trash problem in my area,Garbage
+Recent ah tap la water varala romba problem iruku,Water
+There is drainage overflow for many days,Drainage
+Frequent uneven road condition near bus stand,Road
+Complaint regarding irregular water supply near my house,Water
+Issue of electricity outage in this locality,Electricity
+Severe garbage issue in street in our street,Garbage
+Enga area la street road correct illa seekram solve pannunga,Road
+Enga area la road la romba potholes iruku romba problem iruku,Road
+Indha area la water shortage romba naal ah seekram solve pannunga,Water
+Namma street la drainage smell romba mosam seekram solve pannunga,Drainage
+Complaint regarding clogged drainage in this locality,Drainage
+Issue of current not available in our street,Electricity
+Issue of water problem in area near bus stand,Water
+Enga area la garbage collect panala daily nadakudhu,Garbage
+Inga power cut daily nadakudhu seekram solve pannunga,Electricity
+Indha area la pipe leak aagudhu romba kashtam,Water
+Issue of drinking water problem for many days,Water
+Severe water overflow from pipeline in this locality,Water
+Frequent potholes on road in our street,Road
+Complaint regarding garbage not collected for many days,Garbage
+Namma street la pipe leak aagudhu daily nadakudhu,Water
+Indha area la tap la water varala daily nadakudhu,Water
+Frequent pipe burst issue in our street,Water
+Facing drainage blocked near my house,Drainage
+Issue of garbage piled on road for many days,Garbage
+Inga drinking water problem iruku seekram solve pannunga,Water
+There is water leakage from pipe in my area,Water
+Inga drinking water problem iruku many days ah,Water
+Namma street la water supply varala many days ah,Water
+Frequent water overflow from pipeline for many days,Water
+Severe voltage fluctuation issue in my area,Electricity
+Complaint regarding tap water not coming in my area,Water
+Recent ah drainage smell romba mosam many days ah,Drainage
+Indha area la road la romba potholes iruku daily nadakudhu,Road
+Complaint regarding water overflow from pipeline for many days,Water
+Issue of power failure near my house,Electricity
+Enga area la electricity supply illa daily nadakudhu,Electricity
+There is water overflow from pipeline near bus stand,Water
+Complaint regarding road causing traffic in our street,Road
+Inga current frequent ah pogudhu romba problem iruku,Electricity
+Complaint regarding pipe burst issue near my house,Water
+Inga water shortage romba naal ah seekram solve pannunga,Water
+There is broken road surface for many days,Road
+Recent ah tap la water varala many days ah,Water
+Frequent garbage piled on road in this locality,Garbage
+Severe no water supply near bus stand,Water
+Enga area la electricity supply illa seekram solve pannunga,Electricity
+Indha area la water shortage romba naal ah seekram solve pannunga,Water
+There is road damaged after rain near bus stand,Road
+Issue of street road damaged near bus stand,Road
+Frequent no electricity supply in this locality,Electricity
+Indha area la road damage aagi iruku many days ah,Road
+There is garbage smell issue near my house,Garbage
+Frequent waste dumped near house near my house,Garbage
+Recent ah drainage smell romba mosam romba kashtam,Drainage
+Recent ah current frequent ah pogudhu romba problem iruku,Electricity
+Recent ah drainage overflow aagudhu romba kashtam,Drainage
+Inga pipe leak aagudhu romba kashtam,Water
+Indha area la drainage block aagi iruku daily nadakudhu,Drainage
+Frequent power failure in my area,Electricity
+Enga area la garbage issue iruku many days ah,Garbage
+Namma street la road full ah holes iruku romba problem iruku,Road
+Severe waste collection delay near my house,Garbage
+Recent ah drinking water problem iruku many days ah,Water
+There is waste collection delay near bus stand,Garbage
+Facing road full of holes in my area,Road
+Namma street la trash road la iruku romba kashtam,Garbage
+Namma street la water shortage romba naal ah romba kashtam,Water
+Issue of drainage pipe broken for many days,Drainage
+Enga area la water supply varala many days ah,Water
+There is frequent power issue near bus stand,Electricity
+Severe road causing traffic in my area,Road
+Issue of garbage issue in street near bus stand,Garbage
+Frequent drainage issue in street for many days,Drainage
+Severe frequent power issue near bus stand,Electricity
+Namma street la sewage problem iruku daily nadakudhu,Drainage
+There is sewage problem for many days,Drainage
+Facing irregular water supply for many days,Water
+Indha area la road damage aagi iruku daily nadakudhu,Road
+Inga trash road la iruku romba kashtam,Garbage
+Enga area la waste bin overflow aagudhu daily nadakudhu,Garbage
+Issue of road not motorable near bus stand,Road
+Indha area la drinking water problem iruku romba problem iruku,Water
+Inga road full ah holes iruku romba problem iruku,Road
+Enga area la drainage smell romba mosam daily nadakudhu,Drainage
+Facing power cut frequently for many days,Electricity
+Recent ah road damage aagi iruku daily nadakudhu,Road
+Frequent electricity problem near my house,Electricity
+Frequent water problem in area for many days,Water
+Inga sewage problem iruku romba kashtam,Drainage
+Inga current frequent ah pogudhu romba kashtam,Electricity
+Enga area la garbage collect panala many days ah,Garbage
+Issue of drainage blocked near bus stand,Drainage
+Enga area la drainage block aagi iruku romba kashtam,Drainage
+Facing low water pressure in our street,Water
+Namma street la drainage overflow aagudhu seekram solve pannunga,Drainage
+Indha area la power cut daily nadakudhu daily nadakudhu,Electricity
+Inga road la romba potholes iruku romba kashtam,Road
+Enga area la water supply varala romba kashtam,Water
+Enga area la road full ah holes iruku romba problem iruku,Road
+There is road not motorable for many days,Road
+Recent ah drainage smell romba mosam many days ah,Drainage
+Issue of water shortage in my area,Water
+Complaint regarding no water supply near my house,Water
+Severe potholes on road in this locality,Road
+Namma street la drainage smell romba mosam seekram solve pannunga,Drainage
+Severe drainage water on road in my area,Drainage
+Complaint regarding road damaged after rain near my house,Road
+Frequent bad road condition in this locality,Road
+Enga area la water shortage romba naal ah many days ah,Water
+Frequent garbage not collected for many days,Garbage
+Enga area la current frequent ah pogudhu romba kashtam,Electricity
+There is voltage fluctuation issue for many days,Electricity
+Complaint regarding irregular water supply near my house,Water
+Frequent garbage issue in street in this locality,Garbage
+Severe electricity problem near bus stand,Electricity
+There is water shortage in our street,Water
+There is bad smell from drainage in this locality,Drainage
+Severe tap water not coming in my area,Water
+Facing municipal waste problem near my house,Garbage
+Namma street la drainage smell romba mosam seekram solve pannunga,Drainage
+There is broken road surface near bus stand,Road
+Frequent sewage overflow for many days,Drainage
+There is irregular water supply near bus stand,Water
+Facing irregular water supply near my house,Water
+There is low water pressure in my area,Water
+Inga main road romba mosama iruku many days ah,Road
+Complaint regarding irregular water supply near bus stand,Water
+Complaint regarding uneven road condition in our street,Road
+Issue of clogged drainage in our street,Drainage
+Issue of tap water not coming near my house,Water
+Inga power cut daily nadakudhu seekram solve pannunga,Electricity
+Complaint regarding sewage water leakage in my area,Drainage
+Recent ah road full ah holes iruku many days ah,Road
+Recent ah road damage aagi iruku romba problem iruku,Road
+Severe current not available near my house,Electricity
+Facing drainage water on road near my house,Drainage
+Issue of water problem in area in our street,Water
+Facing garbage smell issue in my area,Garbage
+Issue of drainage overflow near bus stand,Drainage
+Enga area la main road romba mosama iruku seekram solve pannunga,Road
+Indha area la voltage romba fluctuation romba problem iruku,Electricity
+Enga area la voltage romba fluctuation seekram solve pannunga,Electricity
+Enga area la voltage romba fluctuation seekram solve pannunga,Electricity
+Issue of water problem in area near bus stand,Water
+Complaint regarding sewage overflow in our street,Drainage
+Severe street lights not working near bus stand,Electricity
+There is pipe burst issue near bus stand,Water
+Inga water supply varala many days ah,Water
+Namma street la power cut daily nadakudhu romba kashtam,Electricity
+Indha area la water supply varala seekram solve pannunga,Water
+Indha area la waste bin overflow aagudhu many days ah,Garbage
+There is road not motorable near my house,Road
+Inga trash road la iruku daily nadakudhu,Garbage
+Enga area la drainage smell romba mosam many days ah,Drainage
+There is road damaged after rain in my area,Road
+Complaint regarding low water pressure near bus stand,Water
+Issue of garbage smell issue in my area,Garbage
+Facing waste dumped near house in our street,Garbage
+Facing garbage smell issue in this locality,Garbage
+Indha area la road full ah holes iruku romba kashtam,Road
+Complaint regarding clogged drainage in our street,Drainage
+Namma street la road la romba potholes iruku romba kashtam,Road
+Inga drainage overflow aagudhu daily nadakudhu,Drainage
+Inga drainage block aagi iruku romba problem iruku,Drainage
+Indha area la road damage aagi iruku seekram solve pannunga,Road
+Inga drainage overflow aagudhu many days ah,Drainage
+Indha area la drainage overflow aagudhu seekram solve pannunga,Drainage
+Indha area la waste bin overflow aagudhu seekram solve pannunga,Garbage
+There is road not motorable in this locality,Road
+Namma street la water shortage romba naal ah many days ah,Water
+Severe garbage not collected in my area,Garbage
+Namma street la trash road la iruku romba problem iruku,Garbage
+Facing road not motorable near my house,Road
+Inga power cut daily nadakudhu many days ah,Electricity
+Namma street la road full ah holes iruku many days ah,Road
+Inga garbage collect panala seekram solve pannunga,Garbage
+Namma street la road la romba potholes iruku many days ah,Road
+Severe sewage problem in this locality,Drainage
+There is drainage overflow near bus stand,Drainage
+Recent ah trash road la iruku romba kashtam,Garbage
+Facing current not available in this locality,Electricity
+Complaint regarding power shutdown in this locality,Electricity
+Indha area la garbage collect panala daily nadakudhu,Garbage
+Indha area la drainage overflow aagudhu seekram solve pannunga,Drainage
+Indha area la street light work aagala romba kashtam,Electricity
+Inga power cut daily nadakudhu romba problem iruku,Electricity
+Recent ah drainage smell romba mosam romba problem iruku,Drainage
+Facing drinking water problem near bus stand,Water
+Issue of waste collection delay in this locality,Garbage
+Severe clogged drainage in this locality,Drainage
+Namma street la current frequent ah pogudhu romba problem iruku,Electricity
+There is garbage issue in street in our street,Garbage
+There is trash problem near bus stand,Garbage
+Complaint regarding clogged drainage in this locality,Drainage
+Namma street la tap la water varala many days ah,Water
+Recent ah road full ah holes iruku romba kashtam,Road
+Complaint regarding road not motorable in our street,Road
+Indha area la main road romba mosama iruku daily nadakudhu,Road
+Frequent street lights not working in my area,Electricity
+Issue of drainage pipe broken in our street,Drainage
+There is drinking water problem in this locality,Water
+Indha area la road damage aagi iruku daily nadakudhu,Road
+There is road full of holes in our street,Road
+Severe power shutdown near bus stand,Electricity
+Inga tap la water varala seekram solve pannunga,Water
+Frequent municipal waste problem near my house,Garbage
+Facing road not motorable near my house,Road
+There is sewage overflow for many days,Drainage
+Facing road full of holes near bus stand,Road
+Facing sewage problem for many days,Drainage
+Enga area la water shortage romba naal ah daily nadakudhu,Water
+Frequent waste dumped near house in our street,Garbage
+Indha area la drainage smell romba mosam romba problem iruku,Drainage
+Recent ah sewage problem iruku romba kashtam,Drainage
+Inga main road romba mosama iruku romba kashtam,Road
+There is electricity outage in our street,Electricity
+Frequent frequent power issue near my house,Electricity
+There is low water pressure near bus stand,Water
+Frequent potholes on road near my house,Road
+Issue of trash overflow in our street,Garbage
+There is garbage smell issue near my house,Garbage
+Complaint regarding drinking water problem for many days,Water
+Indha area la drainage overflow aagudhu romba problem iruku,Drainage
+Enga area la drainage block aagi iruku romba kashtam,Drainage
+Namma street la street road correct illa romba problem iruku,Road
+Recent ah waste bin overflow aagudhu seekram solve pannunga,Garbage
+Frequent cracks on main road in our street,Road
+Issue of current not available in our street,Electricity
+There is garbage not collected near bus stand,Garbage
+Recent ah street light work aagala seekram solve pannunga,Electricity
+Facing drainage blocked in our street,Drainage
+Complaint regarding drinking water problem in this locality,Water
+Complaint regarding potholes on road in this locality,Road
+There is drainage issue in street in my area,Drainage
+Facing uneven road condition for many days,Road
+Namma street la sewage water road la odudhu romba kashtam,Drainage
+There is tap water not coming for many days,Water
+There is drainage water on road near bus stand,Drainage
+Facing water problem in area for many days,Water
+Frequent trash problem near bus stand,Garbage
+Indha area la voltage romba fluctuation many days ah,Electricity
+Severe power failure in this locality,Electricity
+Inga pipe leak aagudhu many days ah,Water
+Namma street la waste bin overflow aagudhu many days ah,Garbage
+Complaint regarding no water supply in this locality,Water
+Enga area la tap la water varala daily nadakudhu,Water
+Facing drainage issue in street in my area,Drainage
+Frequent road damaged after rain near bus stand,Road
+There is power cut frequently in this locality,Electricity
+There is garbage piled on road in this locality,Garbage
+Frequent frequent power issue in my area,Electricity
+Inga drainage overflow aagudhu romba kashtam,Drainage
+Frequent water problem in area in this locality,Water
+Namma street la main road romba mosama iruku seekram solve pannunga,Road
+Indha area la street light work aagala romba problem iruku,Electricity
+Complaint regarding drainage water on road near bus stand,Drainage
+Complaint regarding street road damaged in my area,Road
+Complaint regarding bad road condition in our street,Road
+Enga area la water shortage romba naal ah many days ah,Water
+Namma street la water supply varala seekram solve pannunga,Water
+Inga garbage smell romba iruku romba problem iruku,Garbage
+Recent ah voltage romba fluctuation romba kashtam,Electricity
+Namma street la road damage aagi iruku daily nadakudhu,Road
+Complaint regarding garbage not collected in our street,Garbage
+Complaint regarding garbage issue in street in this locality,Garbage
+Indha area la road full ah holes iruku many days ah,Road
+Indha area la voltage romba fluctuation romba problem iruku,Electricity
+Frequent road damaged after rain near bus stand,Road
+Issue of road not motorable for many days,Road
+Recent ah drainage smell romba mosam seekram solve pannunga,Drainage
+Facing power shutdown for many days,Electricity
+There is water shortage in our street,Water
+Frequent water overflow from pipeline in this locality,Water
+Namma street la street light work aagala romba problem iruku,Electricity
+There is road causing traffic near bus stand,Road
+Complaint regarding waste dumped near house near bus stand,Garbage
+Severe low water pressure near my house,Water
+Inga drinking water problem iruku daily nadakudhu,Water
+Frequent potholes on road near my house,Road
+Complaint regarding drainage pipe broken for many days,Drainage
+Facing low water pressure for many days,Water
+Inga garbage collect panala many days ah,Garbage
+Inga drinking water problem iruku romba kashtam,Water
+Frequent garbage issue in street in this locality,Garbage
+Facing voltage fluctuation issue in my area,Electricity
+Namma street la garbage collect panala romba problem iruku,Garbage
+Enga area la sewage water road la odudhu daily nadakudhu,Drainage
+Namma street la current frequent ah pogudhu romba kashtam,Electricity
+Complaint regarding bad road condition in my area,Road
+Issue of bad road condition near my house,Road
+Recent ah water supply varala romba kashtam,Water
+Severe street lights not working in my area,Electricity
+Severe water leakage from pipe near my house,Water
+Issue of clogged drainage in this locality,Drainage
+Issue of current not available in this locality,Electricity
+Frequent no electricity supply in my area,Electricity
+Namma street la road damage aagi iruku many days ah,Road
+Issue of drainage issue in street in our street,Drainage
+Complaint regarding municipal waste problem for many days,Garbage
+Complaint regarding power shutdown for many days,Electricity
+Issue of low water pressure in our street,Water
+Issue of cracks on main road for many days,Road
+There is water shortage near my house,Water
+Issue of frequent power issue in our street,Electricity
+Facing municipal waste problem in our street,Garbage
+Frequent water problem in area for many days,Water
+Severe road full of holes near bus stand,Road
+Namma street la waste bin overflow aagudhu seekram solve pannunga,Garbage
+Facing clogged drainage near my house,Drainage
+Frequent electricity problem near bus stand,Electricity
+Namma street la street road correct illa romba kashtam,Road
+Complaint regarding drainage blocked in this locality,Drainage
+Frequent drainage blocked near bus stand,Drainage
+Severe broken road surface in this locality,Road
+Enga area la street light work aagala daily nadakudhu,Electricity
+Complaint regarding power shutdown near bus stand,Electricity
+Issue of low water pressure near my house,Water
+Facing drainage water on road near bus stand,Drainage
+Inga garbage collect panala romba problem iruku,Garbage
+Namma street la waste bin overflow aagudhu seekram solve pannunga,Garbage
+Issue of power failure near bus stand,Electricity
+Enga area la drainage smell romba mosam romba problem iruku,Drainage
+Severe drainage overflow near my house,Drainage
+Severe street road damaged near my house,Road
+There is garbage not collected in this locality,Garbage
+Issue of frequent power issue in our street,Electricity
+Severe power cut frequently near my house,Electricity
+Recent ah street road correct illa daily nadakudhu,Road
+Indha area la road damage aagi iruku romba problem iruku,Road
+Namma street la current frequent ah pogudhu daily nadakudhu,Electricity
+Frequent road not motorable near bus stand,Road
+There is drainage blocked in this locality,Drainage
+Facing sewage water leakage near bus stand,Drainage
+Frequent road damaged after rain in my area,Road
+Enga area la road damage aagi iruku seekram solve pannunga,Road
+Severe irregular water supply near bus stand,Water
+Severe broken road surface in this locality,Road
+Facing drainage blocked in my area,Drainage
+Issue of garbage smell issue for many days,Garbage
+Inga road damage aagi iruku seekram solve pannunga,Road
+Issue of pipe burst issue near my house,Water
+Severe uneven road condition in our street,Road
+Frequent broken road surface in our street,Road
+Complaint regarding waste bin overflowing in our street,Garbage
+Inga drinking water problem iruku romba kashtam,Water
+Indha area la road la romba potholes iruku many days ah,Road
+Frequent drainage overflow in our street,Drainage
+Inga water supply varala romba kashtam,Water
+Issue of no electricity supply near my house,Electricity
+Recent ah garbage smell romba iruku romba kashtam,Garbage
+Inga street light work aagala romba kashtam,Electricity
+Facing road full of holes in my area,Road
+Complaint regarding road not motorable near bus stand,Road
+Recent ah garbage collect panala daily nadakudhu,Garbage
+Issue of drinking water problem near bus stand,Water
+Severe sewage problem in this locality,Drainage
+Complaint regarding low water pressure in our street,Water
+Recent ah sewage water road la odudhu daily nadakudhu,Drainage
+Recent ah trash road la iruku romba problem iruku,Garbage
+Recent ah waste bin overflow aagudhu many days ah,Garbage
+There is drainage water on road in my area,Drainage
+Inga sewage problem iruku seekram solve pannunga,Drainage
+Namma street la water shortage romba naal ah daily nadakudhu,Water
+Issue of waste collection delay near bus stand,Garbage
+There is low water pressure in my area,Water
+Issue of electricity problem for many days,Electricity
+Issue of irregular water supply in this locality,Water
+Complaint regarding garbage piled on road in my area,Garbage
+Enga area la garbage smell romba iruku daily nadakudhu,Garbage
+Complaint regarding street lights not working in my area,Electricity
+Recent ah pipe leak aagudhu seekram solve pannunga,Water
+Enga area la power cut daily nadakudhu romba kashtam,Electricity
+Enga area la road full ah holes iruku romba problem iruku,Road
+Issue of garbage piled on road for many days,Garbage
+Indha area la road la romba potholes iruku romba problem iruku,Road
+Enga area la sewage water road la odudhu daily nadakudhu,Drainage
+Severe road not motorable in this locality,Road
+Enga area la garbage collect panala romba problem iruku,Garbage
+Enga area la sewage problem iruku romba kashtam,Drainage
+Issue of drainage issue in street for many days,Drainage
+There is waste collection delay near my house,Garbage
+Complaint regarding potholes on road for many days,Road
+Complaint regarding garbage issue in street in our street,Garbage
+Issue of cracks on main road in my area,Road
+Enga area la garbage issue iruku romba kashtam,Garbage
+Frequent clogged drainage in this locality,Drainage
+Namma street la garbage issue iruku many days ah,Garbage
+Inga drainage overflow aagudhu daily nadakudhu,Drainage
+Namma street la trash road la iruku seekram solve pannunga,Garbage
+Severe water leakage from pipe in our street,Water
+Frequent no water supply for many days,Water
+Severe current not available in my area,Electricity
+Facing municipal waste problem near my house,Garbage
+Severe bad smell from drainage for many days,Drainage
+Inga drainage block aagi iruku romba problem iruku,Drainage
+Frequent drainage overflow near my house,Drainage
+Issue of sewage problem near bus stand,Drainage
+Issue of road damaged after rain near bus stand,Road
+Recent ah water supply varala seekram solve pannunga,Water
+Severe cracks on main road in our street,Road
+Severe waste collection delay in our street,Garbage
+Namma street la sewage problem iruku romba kashtam,Drainage
+Severe pipe burst issue near bus stand,Water
+Facing potholes on road for many days,Road
+Frequent trash overflow in this locality,Garbage
+Frequent water overflow from pipeline in our street,Water
+There is power cut frequently near my house,Electricity
+Facing trash problem in our street,Garbage
+Inga road damage aagi iruku daily nadakudhu,Road
+There is frequent power issue near bus stand,Electricity
+Namma street la waste bin overflow aagudhu romba kashtam,Garbage
+There is water shortage in my area,Water
+There is street road damaged for many days,Road
+Facing garbage piled on road near bus stand,Garbage
+Inga garbage smell romba iruku romba problem iruku,Garbage
+There is drainage issue in street near bus stand,Drainage
+Facing garbage not collected in our street,Garbage
+There is road not motorable near my house,Road
+Inga water supply varala daily nadakudhu,Water
+Complaint regarding power shutdown in our street,Electricity
+Inga voltage romba fluctuation romba problem iruku,Electricity
+Issue of road damaged after rain for many days,Road
+Indha area la garbage issue iruku romba problem iruku,Garbage
+Indha area la garbage smell romba iruku many days ah,Garbage
+Frequent road causing traffic near my house,Road
+Recent ah drainage smell romba mosam romba problem iruku,Drainage
+Recent ah pipe leak aagudhu many days ah,Water
+Complaint regarding uneven road condition near bus stand,Road
+There is potholes on road in our street,Road
+Frequent potholes on road in this locality,Road
+Facing drinking water problem for many days,Water
+Indha area la power cut daily nadakudhu daily nadakudhu,Electricity
+Enga area la garbage collect panala romba kashtam,Garbage
+Inga main road romba mosama iruku seekram solve pannunga,Road
+Indha area la power cut daily nadakudhu many days ah,Electricity
+Inga street light work aagala many days ah,Electricity
+Issue of road damaged after rain for many days,Road
+Namma street la sewage problem iruku many days ah,Drainage
+Enga area la road full ah holes iruku seekram solve pannunga,Road
+Enga area la water supply varala many days ah,Water
+Frequent cracks on main road for many days,Road
+Frequent water overflow from pipeline in my area,Water
+Frequent water shortage near my house,Water
+Complaint regarding drainage overflow for many days,Drainage
+Facing no water supply for many days,Water
+Frequent trash problem near bus stand,Garbage
+Issue of power shutdown in this locality,Electricity
+Facing bad road condition for many days,Road
+There is power shutdown for many days,Electricity
+There is frequent power issue in this locality,Electricity
+Namma street la drainage block aagi iruku seekram solve pannunga,Drainage
+Frequent sewage water leakage in this locality,Drainage
+There is broken road surface near bus stand,Road
+Recent ah sewage water road la odudhu daily nadakudhu,Drainage
+Frequent clogged drainage in this locality,Drainage
+There is cracks on main road in our street,Road
+Inga drainage block aagi iruku daily nadakudhu,Drainage
+There is water overflow from pipeline near bus stand,Water
+Inga road la romba potholes iruku daily nadakudhu,Road
+Recent ah drainage block aagi iruku many days ah,Drainage
+There is voltage fluctuation issue in our street,Electricity
+Frequent trash overflow in this locality,Garbage
+There is street lights not working for many days,Electricity
+There is water overflow from pipeline in my area,Water
+Indha area la garbage smell romba iruku seekram solve pannunga,Garbage
+Complaint regarding potholes on road in our street,Road
+Frequent street road damaged near bus stand,Road
+Namma street la main road romba mosama iruku daily nadakudhu,Road
+Severe garbage smell issue near my house,Garbage
+Complaint regarding power shutdown for many days,Electricity
+Severe electricity problem in our street,Electricity
+There is clogged drainage near bus stand,Drainage
+Complaint regarding garbage not collected near bus stand,Garbage
+Severe power failure near bus stand,Electricity
+Inga trash road la iruku seekram solve pannunga,Garbage
+Severe no electricity supply near my house,Electricity
+Severe sewage problem near bus stand,Drainage
+There is waste dumped near house in my area,Garbage
+Namma street la garbage collect panala seekram solve pannunga,Garbage
+Indha area la road damage aagi iruku romba problem iruku,Road
+Complaint regarding drainage overflow for many days,Drainage
+There is road causing traffic in our street,Road
+There is water leakage from pipe near bus stand,Water
+Issue of garbage not collected in this locality,Garbage
+Severe power shutdown in this locality,Electricity
+Recent ah garbage smell romba iruku romba problem iruku,Garbage
+Indha area la garbage issue iruku daily nadakudhu,Garbage
+Complaint regarding sewage problem near bus stand,Drainage
+Recent ah electricity supply illa daily nadakudhu,Electricity
+Indha area la main road romba mosama iruku daily nadakudhu,Road
+Inga pipe leak aagudhu many days ah,Water
+Frequent electricity outage in this locality,Electricity
+Frequent street lights not working in our street,Electricity
+Inga garbage smell romba iruku many days ah,Garbage
+Frequent tap water not coming for many days,Water
