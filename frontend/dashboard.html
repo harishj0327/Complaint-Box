@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Complaints</title>
+
+  <!-- Dashboard CSS -->
+  <link rel="stylesheet" href="./css/dashboard.css">
+
+  <!-- Leaflet CSS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+
+  <!-- Leaflet JS -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  </script>
+</head>
+
+<body>
+
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>📊 Dashboard</h2>
+
+    <!-- ✅ FIXED LINK -->
+    <a href="complaint.html">➕ New Complaint</a>
+
+    <a href="#">📋 Complaints</a>
+    <a href="login.html">🚪 Logout</a>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Complaint List -->
+    <div class="list">
+      <h3>Complaints</h3>
+
+      <div class="complaint-card" onclick="focusComplaint(13.08, 80.27)">
+        <img src="./assets/placeholder.jpg" alt="Complaint image">
+        <div>
+          <p>Road damage near bus stand</p>
+          <span class="badge high">High</span>
+        </div>
+      </div>
+
+      <div class="complaint-card" onclick="focusComplaint(13.09, 80.28)">
+        <img src="./assets/placeholder.jpg" alt="Complaint image">
+        <div>
+          <p>Garbage overflow</p>
+          <span class="badge medium">Medium</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+  </div>
+</div>
+
+<!-- Dashboard JS -->
+<script src="./js/dashboard.js"></script>
+</body>
+</html>

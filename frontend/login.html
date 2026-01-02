@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Access | Smart Complaint Box</title>
+  <link rel="stylesheet" href="./css/auth.css" />
+</head>
+
+<body>
+
+<div class="auth-layout" id="authLayout">
+
+  <!-- Left Brand Panel -->
+  <div class="brand-panel" id="brandPanel">
+    <div class="brand-content">
+      <h1>Smart Complaint Box</h1>
+      <p>
+        A civic platform to report issues,
+        track resolution, and improve communities.
+      </p>
+    </div>
+  </div>
+
+  <!-- Right Auth Panel -->
+  <div class="auth-panel" id="authPanel">
+
+    <h2 id="title">Sign in</h2>
+    <p class="subtitle" id="subtitle">
+      Continue with your account
+    </p>
+
+    <form id="authForm">
+      <label>Email</label>
+      <input type="email" required />
+
+      <label>Password</label>
+      <input type="password" required />
+
+      <div id="confirmBlock" style="display:none;">
+        <label>Confirm password</label>
+        <input type="password" />
+      </div>
+
+      <button type="submit">Continue</button>
+    </form>
+
+    <p class="switch">
+      <span id="switchText">New here?</span>
+      <a href="#" onclick="toggleAuth()">Create account</a>
+    </p>
+
+  </div>
+
+</div>
+
+<script src="./js/auth.js"></script>
+</body>
+</html>

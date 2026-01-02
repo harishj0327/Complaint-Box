@@ -22,15 +22,28 @@ function initMap() {
   });
 }
 
+// Handle form submit (PREVENT RELOAD)
+document
+  .getElementById("complaintForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    submitComplaint();
+  });
+
 // Submit complaint to backend
 function submitComplaint() {
   const text = document.getElementById("text").value.trim();
   const photo = document.getElementById("photo").files[0];
+  const btn = document.getElementById("submitBtn");
 
   if (!text || selectedLat === undefined) {
     alert("Please enter complaint and select location");
     return;
   }
+
+  // Button loading state
+  btn.disabled = true;
+  btn.innerText = "⏳ Submitting...";
 
   const formData = new FormData();
   formData.append("text", text);
@@ -56,13 +69,19 @@ function submitComplaint() {
           : "green";
 
       document.getElementById("result").style.display = "block";
+
+      // Reset form UX
+      btn.innerText = "🚀 Submit Complaint";
+      btn.disabled = false;
     })
     .catch(err => {
       console.error(err);
       alert("Submission failed");
+
+      btn.innerText = "🚀 Submit Complaint";
+      btn.disabled = false;
     });
 }
-
 
 // Load map after page load
 window.onload = initMap;
