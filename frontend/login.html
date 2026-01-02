@@ -31,14 +31,14 @@
 
     <form id="authForm">
       <label>Email</label>
-      <input type="email" required />
+      <input type="email" id="email" required />
 
       <label>Password</label>
-      <input type="password" required />
+      <input type="password" id="password" required />
 
       <div id="confirmBlock" style="display:none;">
         <label>Confirm password</label>
-        <input type="password" />
+        <input type="password" id="confirmPassword" />
       </div>
 
       <button type="submit">Continue</button>
@@ -53,6 +53,7 @@
 
 </div>
 
-<script src="./js/auth.js"></script>
+<!-- IMPORTANT: module -->
+<script type="module" src="./js/auth.js"></script>
 </body>
 </html>

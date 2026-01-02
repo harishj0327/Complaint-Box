@@ -2,9 +2,9 @@ let map;
 let marker;
 let selectedLat, selectedLng;
 
-// Initialize OpenStreetMap
+// Initialize map
 function initMap() {
-  map = L.map("map").setView([13.0827, 80.2707], 13); // Chennai
+  map = L.map("map").setView([13.0827, 80.2707], 13);
 
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "&copy; OpenStreetMap contributors"
@@ -14,24 +14,24 @@ function initMap() {
     selectedLat = e.latlng.lat;
     selectedLng = e.latlng.lng;
 
-    if (marker) {
-      map.removeLayer(marker);
-    }
-
+    if (marker) map.removeLayer(marker);
     marker = L.marker([selectedLat, selectedLng]).addTo(map);
   });
 }
 
-// Handle form submit (PREVENT RELOAD)
-document
-  .getElementById("complaintForm")
+document.getElementById("complaintForm")
   .addEventListener("submit", function (e) {
     e.preventDefault();
     submitComplaint();
   });
 
-// Submit complaint to backend
-function submitComplaint() {
+async function submitComplaint() {
+  if (!window.currentUser) {
+    alert("Please login again");
+    window.location.href = "login.html";
+    return;
+  }
+
   const text = document.getElementById("text").value.trim();
   const photo = document.getElementById("photo").files[0];
   const btn = document.getElementById("submitBtn");
@@ -41,7 +41,6 @@ function submitComplaint() {
     return;
   }
 
-  // Button loading state
   btn.disabled = true;
   btn.innerText = "⏳ Submitting...";
 
@@ -51,11 +50,20 @@ function submitComplaint() {
   formData.append("longitude", selectedLng);
   if (photo) formData.append("photo", photo);
 
+  // 🔐 GET FIREBASE ID TOKEN
+  const token = await window.currentUser.getIdToken();
+
   fetch("http://127.0.0.1:8000/complaint", {
     method: "POST",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
     body: formData
   })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error("Unauthorized");
+      return res.json();
+    })
     .then(data => {
       document.getElementById("category").innerText = data.category;
 
@@ -70,18 +78,16 @@ function submitComplaint() {
 
       document.getElementById("result").style.display = "block";
 
-      // Reset form UX
       btn.innerText = "🚀 Submit Complaint";
       btn.disabled = false;
     })
     .catch(err => {
       console.error(err);
-      alert("Submission failed");
+      alert("Submission failed or unauthorized");
 
       btn.innerText = "🚀 Submit Complaint";
       btn.disabled = false;
     });
 }
 
-// Load map after page load
 window.onload = initMap;

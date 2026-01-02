@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Smart Complaint Box</title>
 
-  <!-- ✅ Correct CSS path -->
+  <!-- CSS -->
   <link rel="stylesheet" href="./css/style.css">
 
   <!-- Leaflet CSS -->
@@ -14,48 +14,74 @@
   />
 
   <!-- Leaflet JS -->
-  <script
-    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- 🔐 Firebase Auth (PROTECT PAGE + GET USER) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged }
+    from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzcZLM7TuZ48mOi8SSEH_k3DOgPPCS78c",
+      authDomain: "complaint-box-88c9b.firebaseapp.com",
+      projectId: "complaint-box-88c9b",
+      appId: "1:545419902164:web:74f9ef082557ffe31d0f41"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Make user available globally
+    window.currentUser = null;
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        window.currentUser = user;
+      }
+    });
   </script>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>📢 Smart Complaint Box</h1>
-    <p class="subtitle">
-      Report issues easily. We’ll prioritize them intelligently.
-    </p>
+<div class="container">
+  <h1>📢 Smart Complaint Box</h1>
+  <p class="subtitle">
+    Report issues easily. We’ll prioritize them intelligently.
+  </p>
 
-    <form id="complaintForm">
+  <form id="complaintForm">
 
-      <label>📝 Complaint Description</label>
-      <textarea
-        id="text"
-        placeholder="Describe the issue in detail..."
-        required
-      ></textarea>
+    <label>📝 Complaint Description</label>
+    <textarea
+      id="text"
+      placeholder="Describe the issue in detail..."
+      required
+    ></textarea>
 
-      <label>📍 Select Location on Map</label>
-      <div id="map"></div>
+    <label>📍 Select Location on Map</label>
+    <div id="map"></div>
 
-      <label>📷 Upload Photo (optional)</label>
-      <input type="file" id="photo" accept="image/*">
+    <label>📷 Upload Photo (optional)</label>
+    <input type="file" id="photo" accept="image/*">
 
-      <button id="submitBtn" type="submit">
-        🚀 Submit Complaint
-      </button>
+    <button id="submitBtn" type="submit">
+      🚀 Submit Complaint
+    </button>
 
-    </form>
+  </form>
 
-    <div id="result" style="display:none;">
-      <h3>✅ Complaint Registered</h3>
-      <p><strong>Category:</strong> <span id="category"></span></p>
-      <p><strong>Priority:</strong> <span id="priority"></span></p>
-    </div>
+  <div id="result" style="display:none;">
+    <h3>✅ Complaint Registered</h3>
+    <p><strong>Category:</strong> <span id="category"></span></p>
+    <p><strong>Priority:</strong> <span id="priority"></span></p>
   </div>
+</div>
 
-  <!-- ✅ Correct JS path -->
-  <script src="./js/complaint.js"></script>
+<!-- Complaint JS -->
+<script src="./js/complaint.js"></script>
 </body>
 </html>
