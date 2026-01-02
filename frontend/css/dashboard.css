@@ -63,6 +63,19 @@ body {
 .medium { background: orange; }
 .low { background: green; }
 
+.priority-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.priority-dot.high { background-color: red; }
+.priority-dot.medium { background-color: orange; }
+.priority-dot.low { background-color: green; }
+
 #map {
   flex: 1;
 }

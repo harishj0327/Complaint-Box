@@ -33,11 +33,12 @@ async function submitComplaint() {
   }
 
   const text = document.getElementById("text").value.trim();
+  const location = document.getElementById("location").value.trim();
   const photo = document.getElementById("photo").files[0];
   const btn = document.getElementById("submitBtn");
 
-  if (!text || selectedLat === undefined) {
-    alert("Please enter complaint and select location");
+  if (!text || selectedLat === undefined || !location) {
+    alert("Please enter complaint, select location, and enter location name");
     return;
   }
 
@@ -46,6 +47,7 @@ async function submitComplaint() {
 
   const formData = new FormData();
   formData.append("text", text);
+  formData.append("location", location);
   formData.append("latitude", selectedLat);
   formData.append("longitude", selectedLng);
   if (photo) formData.append("photo", photo);

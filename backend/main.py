@@ -50,6 +50,7 @@ def verify_token(authorization: str = Header(None)):
 @app.post("/complaint")
 async def register_complaint(
     text: str = Form(...),
+    location: str = Form(...),
     latitude: float = Form(...),
     longitude: float = Form(...),
     photo: UploadFile = File(None),
@@ -80,6 +81,7 @@ async def register_complaint(
 
     complaint_data = {
         "text": text,
+        "location": location,
         "category": category,
         "priority": priority,
         "latitude": latitude,
