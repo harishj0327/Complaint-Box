@@ -4,12 +4,9 @@ let selectedLat;
 let selectedLng;
 let mapInitialized = false;
 
-/* -------------------- SAFETY CHECK -------------------- */
-// Prevent this JS from running on other pages
-const form = document.getElementById("complaintForm");
-if (!form) {
-  console.warn("complaintForm not found. complaint.js not initialized.");
-} else {
+// Initialize map
+function initMap() {
+  map = L.map("map").setView([13.0827, 80.2707], 13);
 
   /* -------------------- MAP INIT -------------------- */
   function initMap() {
@@ -19,21 +16,35 @@ if (!form) {
       attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
 
-    map.on("click", function (e) {
-      selectedLat = e.latlng.lat;
-      selectedLng = e.latlng.lng;
+    if (marker) map.removeLayer(marker);
+    marker = L.marker([selectedLat, selectedLng]).addTo(map);
+  });
+}
 
-      if (marker) {
-        map.removeLayer(marker);
-      }
-      marker = L.marker([selectedLat, selectedLng]).addTo(map);
-    });
+document.getElementById("complaintForm")
+  .addEventListener("submit", function (e) {
+    e.preventDefault();
+    submitComplaint();
+  });
+
+async function submitComplaint() {
+  if (!window.currentUser) {
+    alert("Please login again");
+    window.location.href = "login.html";
+    return;
   }
 
-  /* -------------------- BUTTON CLICK -------------------- */
-  document
-    .getElementById("submitBtn")
-    .addEventListener("click", submitComplaint);
+  const text = document.getElementById("text").value.trim();
+  const photo = document.getElementById("photo").files[0];
+  const btn = document.getElementById("submitBtn");
+
+  if (!text || selectedLat === undefined) {
+    alert("Please enter complaint and select location");
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerText = "⏳ Submitting...";
 
   function submitComplaint() {
     const text = document.getElementById("text").value.trim();
@@ -41,10 +52,22 @@ if (!form) {
     const photo = photoInput ? photoInput.files[0] : null;
     const btn = document.getElementById("submitBtn");
 
-    if (!text || selectedLat === undefined || selectedLng === undefined) {
-      alert("Please enter complaint and select location on the map.");
-      return;
-    }
+  // 🔐 GET FIREBASE ID TOKEN
+  const token = await window.currentUser.getIdToken();
+
+  fetch("http://127.0.0.1:8000/complaint", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${token}`
+    },
+    body: formData
+  })
+    .then(res => {
+      if (!res.ok) throw new Error("Unauthorized");
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById("category").innerText = data.category;
 
     // Button loading state
     btn.disabled = true;
@@ -56,22 +79,12 @@ if (!form) {
       marker = null;
     }
 
-    const formData = new FormData();
-    formData.append("text", text);
-    formData.append("latitude", selectedLat);
-    formData.append("longitude", selectedLng);
-    if (photo) formData.append("photo", photo);
-
-    fetch("http://127.0.0.1:8000/complaint", {
-      method: "POST",
-      body: formData
+      btn.innerText = "🚀 Submit Complaint";
+      btn.disabled = false;
     })
-      .then(res => {
-        if (!res.ok) throw new Error("Server returned error");
-        return res.json();
-      })
-      .then(data => {
-        console.log("Complaint submitted:", data);
+    .catch(err => {
+      console.error(err);
+      alert("Submission failed or unauthorized");
 
         // Show result
         const result = document.getElementById("result");
@@ -115,3 +128,5 @@ if (!form) {
     mapInitialized = true;
   }
 }
+
+window.onload = initMap;
