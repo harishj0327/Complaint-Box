@@ -16,6 +16,19 @@ function initMap() {
 
     if (marker) map.removeLayer(marker);
     marker = L.marker([selectedLat, selectedLng]).addTo(map);
+    // Reverse-geocode to fill location name automatically
+    (async () => {
+      try {
+        const resp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${selectedLat}&lon=${selectedLng}`);
+        const data = await resp.json();
+        const locInput = document.getElementById("location");
+        if (data && data.display_name) {
+          locInput.value = data.display_name;
+        }
+      } catch (err) {
+        console.warn("Reverse geocode failed:", err);
+      }
+    })();
   });
 }
 
