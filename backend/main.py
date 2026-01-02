@@ -1,8 +1,6 @@
 from fastapi import FastAPI, File, UploadFile, Form, Depends, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
 from datetime import datetime
-import os, shutil
 
 from services.classify import predict_category
 from services.priority import assign_priority
@@ -10,6 +8,9 @@ from services.geo import is_within_radius
 
 from firebase_admin import credentials, firestore, initialize_app, auth as firebase_auth
 import firebase_admin
+
+import cloudinary
+import cloudinary.uploader
 
 app = FastAPI()
 
@@ -29,10 +30,13 @@ if not firebase_admin._apps:
 
 db = firestore.client()
 
-# -------------------- UPLOADS --------------------
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
-app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+# -------------------- CLOUDINARY (HARDCODED) --------------------
+cloudinary.config(
+    cloud_name="dc2hsf2en",
+    api_key="586174424997459",
+    api_secret="hNaGl9e0Abi-7nzTzpn5OlM8w6k",
+    secure=True
+)
 
 # -------------------- TOKEN VERIFY --------------------
 def verify_token(authorization: str = Header(None)):
@@ -41,8 +45,7 @@ def verify_token(authorization: str = Header(None)):
 
     try:
         token = authorization.split(" ")[1]
-        decoded = firebase_auth.verify_id_token(token)
-        return decoded
+        return firebase_auth.verify_id_token(token)
     except Exception:
         raise HTTPException(status_code=401, detail="Invalid token")
 
@@ -62,8 +65,7 @@ async def register_complaint(
     category = predict_category(text)
 
     similar_count = 0
-    docs = db.collection("complaints").stream()
-    for doc in docs:
+    for doc in db.collection("complaints").stream():
         c = doc.to_dict()
         if c["category"] == category:
             if is_within_radius(latitude, longitude, c["latitude"], c["longitude"]):
@@ -71,13 +73,14 @@ async def register_complaint(
 
     priority = assign_priority(similar_count + 1)
 
+    # -------- PHOTO → CLOUDINARY --------
     photo_url = None
     if photo:
-        filename = f"{datetime.now().timestamp()}_{photo.filename}"
-        filepath = os.path.join(UPLOAD_DIR, filename)
-        with open(filepath, "wb") as buffer:
-            shutil.copyfileobj(photo.file, buffer)
-        photo_url = f"/uploads/{filename}"
+        result = cloudinary.uploader.upload(
+            photo.file,
+            folder="complaints"
+        )
+        photo_url = result["secure_url"]
 
     complaint_data = {
         "text": text,
@@ -108,5 +111,4 @@ def get_my_complaints(user_email: str):
 # -------------------- GET ALL COMPLAINTS --------------------
 @app.get("/all-complaints")
 def get_all_complaints():
-    docs = db.collection("complaints").stream()
-    return [doc.to_dict() for doc in docs]
+    return [doc.to_dict() for doc in db.collection("complaints").stream()]

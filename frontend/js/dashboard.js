@@ -10,6 +10,10 @@ async function getLocationName(lat, lng) {
   }
 }
 
+// Declare globals
+let map;
+let activeMarker;
+
 // Initialize map
 map = L.map("map").setView([13.0827, 80.2707], 12);
 
@@ -18,9 +22,13 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 }).addTo(map);
 
 // Focus complaint on map
-function focusComplaint(lat, lng) {
+// show marker and optional popup text
+function focusComplaint(lat, lng, popupText) {
   if (activeMarker) map.removeLayer(activeMarker);
   activeMarker = L.marker([lat, lng]).addTo(map);
+  if (popupText) {
+    activeMarker.bindPopup(popupText).openPopup();
+  }
   map.setView([lat, lng], 15);
 }
 
@@ -47,13 +55,34 @@ window.loadMyComplaints = async function () {
       for (const c of data) {
         const card = document.createElement("div");
         card.className = "complaint-card";
-        card.onclick = () => focusComplaint(c.latitude, c.longitude);
+        card.onclick = () => {
+          const lat = parseFloat(c.latitude);
+          const lng = parseFloat(c.longitude);
+          if (!isFinite(lat) || !isFinite(lng)) {
+            console.warn("Complaint has no valid coordinates:", c);
+            return;
+          }
+          focusComplaint(lat, lng, c.text || c.category || "");
+        };
 
-        const locationDisplay = c.location || await getLocationName(c.latitude, c.longitude);
+        const latVal = parseFloat(c.latitude);
+        const lngVal = parseFloat(c.longitude);
+        let locationDisplay;
+        if (c.location) {
+          locationDisplay = c.location;
+        } else if (isFinite(latVal) && isFinite(lngVal)) {
+          locationDisplay = await getLocationName(latVal, lngVal);
+        } else {
+          locationDisplay = "Unknown location";
+        }
+
+        const imageHtml = c.photo_url ? `<div class="image-wrap"><img src="${c.photo_url}" alt="complaint photo"></div>` : "";
 
         card.innerHTML = `
-          <div>
-            <p>${c.text}</p>
+          ${imageHtml}
+          <div class="content">
+            <p><strong>Complaint:</strong> ${c.text}</p>
+            <p><strong>Category:</strong> ${c.category}</p>
             <p><strong>Location:</strong> ${locationDisplay}</p>
             <p><strong>Priority:</strong> ${c.priority} <span class="priority-dot ${c.priority.toLowerCase()}"></span></p>
           </div>

@@ -87,7 +87,7 @@ body::after {
 .brand-panel {
   background: #0f172a;
   color: #e5e7eb;
-  padding: 50px 45px;
+  padding: 50px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
