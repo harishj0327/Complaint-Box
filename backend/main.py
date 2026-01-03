@@ -1,77 +1,33 @@
-from fastapi import FastAPI, File, UploadFile, Form
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-import os
-import shutil
-from datetime import datetime
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
+import pickle
 
-from services.classify import predict_category
-from services.priority import assign_priority
-from services.geo import is_within_radius
+# Load AI model and vectorizer
+model = pickle.load(open("../ai_model/model.pkl", "rb"))
+vectorizer = pickle.load(open("../ai_model/vectorizer.pkl", "rb"))
 
 app = FastAPI()
 
-# -------------------- CORS --------------------
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Mount static files
+app.mount("/static", StaticFiles(directory="../frontend"), name="static")
 
-# -------------------- STORAGE --------------------
-UPLOAD_DIR = "uploads"
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+# Request body format
+class Complaint(BaseModel):
+    text: str
 
-app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
+@app.get("/")
+def home():
+    return FileResponse("../frontend/index.html")
 
-# Temporary in-memory DB
-complaints_db = []
+@app.post("/predict")
+def predict_category(complaint: Complaint):
+    text = [complaint.text]
+    text_vectorized = vectorizer.transform(text)
+    prediction = model.predict(text_vectorized)[0]
 
-# -------------------- API --------------------
-@app.post("/complaint")
-async def register_complaint(
-    text: str = Form(...),
-    latitude: float = Form(...),
-    longitude: float = Form(...),
-    photo: UploadFile = File(None)
-):
-    # AI categorization
-    category = predict_category(text)
-
-    # Geo-based similarity
-    similar_count = 0
-    for c in complaints_db:
-        if c["category"] == category:
-            if is_within_radius(
-                latitude, longitude,
-                c["latitude"], c["longitude"]
-            ):
-                similar_count += 1
-
-    priority = assign_priority(similar_count + 1)
-
-    # Photo handling
-    photo_url = None
-    if photo:
-        filename = f"{datetime.now().timestamp()}_{photo.filename}"
-        filepath = os.path.join(UPLOAD_DIR, filename)
-
-        with open(filepath, "wb") as buffer:
-            shutil.copyfileobj(photo.file, buffer)
-
-        photo_url = f"/uploads/{filename}"
-
-    complaint = {
-        "text": text,
-        "category": category,
-        "priority": priority,
-        "latitude": latitude,
-        "longitude": longitude,
-        "photo_url": photo_url
+    return {
+        "complaint": complaint.text,
+        "predicted_category": prediction
     }
-
-    complaints_db.append(complaint)
-
-    return complaint
