@@ -3,15 +3,22 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import pickle
+import os
+
+# Get the directory of the current script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
 
 # Load AI model and vectorizer
-model = pickle.load(open("../ai_model/model.pkl", "rb"))
-vectorizer = pickle.load(open("../ai_model/vectorizer.pkl", "rb"))
+model_path = os.path.join(project_root, "ai_model", "model.pkl")
+vectorizer_path = os.path.join(project_root, "ai_model", "vectorizer.pkl")
+model = pickle.load(open(model_path, "rb"))
+vectorizer = pickle.load(open(vectorizer_path, "rb"))
 
 app = FastAPI()
 
 # Mount static files
-app.mount("/static", StaticFiles(directory="../frontend"), name="static")
+app.mount("/static", StaticFiles(directory=os.path.join(project_root, "frontend")), name="static")
 
 # Request body format
 class Complaint(BaseModel):
@@ -19,7 +26,7 @@ class Complaint(BaseModel):
 
 @app.get("/")
 def home():
-    return FileResponse("../frontend/index.html")
+    return FileResponse(os.path.join(project_root, "frontend", "complaint.html"))
 
 @app.post("/predict")
 def predict_category(complaint: Complaint):
