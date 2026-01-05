@@ -1,18 +1,32 @@
-body {
-  margin: 0;
-  font-family: "Segoe UI";
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== DASHBOARD LAYOUT ===== */
 .dashboard {
   display: flex;
   height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
+/* ===== SIDEBAR ===== */
 .sidebar {
   width: 220px;
   background: #1e293b;
   color: white;
   padding: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar h2 {
+  margin-top: 0;
 }
 
 .sidebar a {
@@ -23,59 +37,47 @@ body {
   font-size: 15px;
 }
 
-.sidebar i {
-  margin-right: 8px;
-}
-
+/* ===== MAIN AREA ===== */
 .main {
   flex: 1;
-  display: flex;
+  display: flex;              /* 🔥 THIS IS CRITICAL */
+  height: 100%;
+  overflow: hidden;
 }
 
+/* ===== COMPLAINT LIST ===== */
 .list {
-  width: 380px;
+  width: 360px;
   padding: 20px;
   overflow-y: auto;
-  border-right: 1px solid #ddd;
-}
-
-.filters {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.filters select {
-  padding: 6px;
-  border-radius: 6px;
-  width: 100%;
-}
-
-.complaint-card {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 14px;
+  border-right: 1px solid #ddd;
+  background: #f8fafc;
+}
+
+.list h3 {
+  margin-top: 0;
+}
+
+/* ===== COMPLAINT CARD ===== */
+.complaint-card {
   background: white;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-.image-wrap img {
-  width: 150px;
-  height: 150px;
   border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  cursor: pointer;
+}
+
+.complaint-card img {
+  width: 140px;
+  height: 140px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-.content {
-  width: 100%;
-}
-
+/* ===== PRIORITY DOT ===== */
 .priority-dot {
   display: inline-block;
   width: 10px;
@@ -84,17 +86,20 @@ body {
   margin-left: 6px;
 }
 
-.priority-dot.low { background: green; }
-.priority-dot.medium { background: orange; }
-.priority-dot.high { background: red; }
-
-#map {
-  flex: 1;
+.priority-dot.low {
+  background: green;
 }
 
-/* Filter label styling */
-.filters label {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
+.priority-dot.medium {
+  background: orange;
+}
+
+.priority-dot.high {
+  background: red;
+}
+
+/* ===== MAP ===== */
+#map {
+  flex: 1;
+  height: 100%;               /* 🔥 MUST HAVE */
 }

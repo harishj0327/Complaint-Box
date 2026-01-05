@@ -1,6 +1,15 @@
+/*************************************************
+ * complaint.js
+ * Works with:
+ * - Firebase auth initialized in complaint.html
+ * - window.currentUser
+ * - FastAPI backend
+ *************************************************/
+
 let map;
 let marker;
-let selectedLat, selectedLng;
+let selectedLat;
+let selectedLng;
 
 /* ---------------- MAP INIT ---------------- */
 function initMap() {
@@ -25,21 +34,26 @@ function initMap() {
       if (data.display_name) {
         document.getElementById("location").value = data.display_name;
       }
-    } catch {}
+    } catch (err) {
+      console.error("Reverse geocoding failed");
+    }
   });
 }
 
+/* ---------------- SUBMIT COMPLAINT ---------------- */
 document.getElementById("submitBtn").addEventListener("click", submitComplaint);
 
 async function submitComplaint() {
-  const token = localStorage.getItem("token");
-  const email = localStorage.getItem("email");
+  // 🔐 Get user from global set in HTML
+  const user = window.currentUser;
 
-  if (!token || !email) {
+  if (!user) {
     alert("Please login again");
     window.location.href = "login.html";
     return;
   }
+
+  const token = await user.getIdToken(true);
 
   const text = document.getElementById("text").value.trim();
   const location = document.getElementById("location").value.trim();
@@ -70,7 +84,10 @@ async function submitComplaint() {
       body: formData
     });
 
-    if (!res.ok) throw new Error("Unauthorized");
+    if (!res.ok) {
+      const err = await res.json();
+      throw new Error(err.detail || "Unauthorized");
+    }
 
     const data = await res.json();
 
@@ -78,14 +95,20 @@ async function submitComplaint() {
     document.getElementById("priority").innerText = data.priority;
     document.getElementById("result").style.display = "block";
 
+    // Reset UI
+    document.getElementById("text").value = "";
+    document.getElementById("photo").value = "";
     if (marker) map.removeLayer(marker);
-    btn.innerText = "🚀 Submit Complaint";
+
     btn.disabled = false;
+    btn.innerText = "🚀 Submit Complaint";
   } catch (err) {
-    alert("Submission failed");
+    console.error(err);
+    alert("Submission failed: " + err.message);
     btn.disabled = false;
     btn.innerText = "🚀 Submit Complaint";
   }
 }
 
+/* ---------------- LOAD MAP ---------------- */
 window.onload = initMap;

@@ -190,3 +190,9 @@ button:hover {
 .auth-layout.swap .auth-panel {
   transform: translateX(-100%);
 }
+/* Smooth text transition */
+.auth-panel h2,
+.auth-panel .subtitle,
+#confirmBlock {
+  transition: all 0.3s ease;
+}

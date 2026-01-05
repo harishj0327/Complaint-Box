@@ -20,11 +20,39 @@ const auth = getAuth(app);
 /* ADMIN EMAIL */
 const ADMIN_EMAIL = "hxrini122007@gmail.com";
 
-/* Toggle UI */
+/* UI Elements */
+const layout = document.getElementById("authLayout");
+const title = document.getElementById("title");
+const subtitle = document.getElementById("subtitle");
+const confirmBlock = document.getElementById("confirmBlock");
+const switchText = document.getElementById("switchText");
+const switchLink = document.getElementById("switchLink");
+
+
+/* Toggle State */
 let signup = false;
+
+/* Toggle UI + Animation */
 window.toggleAuth = function () {
   signup = !signup;
-  document.getElementById("confirmBlock").style.display = signup ? "block" : "none";
+
+  // 🔥 Animation trigger
+  layout.classList.toggle("swap", signup);
+
+  // Confirm password
+  confirmBlock.style.display = signup ? "block" : "none";
+
+  // Text updates
+  title.textContent = signup ? "Create account" : "Sign in";
+  subtitle.textContent = signup
+    ? "Create a new account to continue"
+    : "Continue with your account";
+
+  switchText.textContent = signup ? "Already have an account?" : "New here?";
+  switchLink.textContent = signup
+    ? "Sign in"
+    : "Create account";
+ 
 };
 
 /* Login / Signup */
@@ -36,6 +64,7 @@ document.getElementById("authForm").addEventListener("submit", async (e) => {
 
   try {
     let userCred;
+
     if (signup) {
       userCred = await createUserWithEmailAndPassword(auth, email, password);
     } else {

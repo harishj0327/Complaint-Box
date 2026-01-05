@@ -6,68 +6,105 @@
 
   <link rel="stylesheet" href="./css/dashboard.css">
 
-  <link rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <!-- Firebase Auth -->
   <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getAuth, onAuthStateChanged, signOut }
-  from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAuth, onAuthStateChanged, signOut }
+      from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDzcZLM7TuZ48mOi8SSEH_k3DOgPPCS78c",
-    authDomain: "complaint-box-88c9b.firebaseapp.com",
-    projectId: "complaint-box-88c9b",
-    appId: "1:545419902164:web:74f9ef082557ffe31d0f41"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyDzcZLM7TuZ48mOi8SSEH_k3DOgPPCS78c",
+      authDomain: "complaint-box-88c9b.firebaseapp.com",
+      projectId: "complaint-box-88c9b",
+      appId: "1:545419902164:web:74f9ef082557ffe31d0f41"
+    };
 
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-  window.loggedInEmail = null;
+    window.loggedInEmail = null;
 
-  onAuthStateChanged(auth, (user) => {
-    if (!user) {
-      window.location.href = "login.html";
-    } else {
-      window.loggedInEmail = user.email;
-
-      // ✅ IMPORTANT: load complaints AFTER auth
-      if (window.loadMyComplaints) {
-        window.loadMyComplaints();
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        window.loggedInEmail = user.email;
+        if (window.loadMyComplaints) {
+          window.loadMyComplaints();
+        }
       }
-    }
-  });
-
-  window.logout = function () {
-    signOut(auth).then(() => {
-      window.location.href = "login.html";
     });
-  };
-</script>
 
+    window.logout = function () {
+      signOut(auth).then(() => {
+        window.location.href = "login.html";
+      });
+    };
+  </script>
 </head>
 
 <body>
 
 <div class="dashboard">
+
+  <!-- SIDEBAR -->
   <div class="sidebar">
     <h2>📊 Dashboard</h2>
     <a href="complaint.html">➕ New Complaint</a>
-    <a href="#">📋 My Complaints</a>
-    <a href="#" onclick="logout()">🚪Logout</a>
+    <a href="#" onclick="showDashboard()">📋 My Complaints</a>
+    <a href="#" onclick="showProfile()">👤 Profile</a>
+    <a href="#" onclick="logout()">🚪 Logout</a>
   </div>
 
+  <!-- MAIN AREA -->
   <div class="main">
-    <div class="list">
-      <h3>My Complaints</h3>
+
+    <!-- DASHBOARD VIEW (default) -->
+    <div id="dashboardView" style="display:flex; width:100%; height:100%;">
+      
+      <div class="list">
+        <h3>My Complaints</h3>
+      </div>
+
+      <div id="map"></div>
+
     </div>
-    <div id="map"></div>
+
+    <!-- PROFILE VIEW (hidden) -->
+    <div
+      id="profileView"
+      style="display:none; width:100%; height:100%; justify-content:center; align-items:flex-start;"
+    >
+      <div class="profile-card">
+        <h2>👤 My Profile</h2>
+        <p class="subtitle">Manage your account details</p>
+
+        <label>Name</label>
+        <input type="text" id="name" placeholder="Your name">
+
+        <label>Email</label>
+        <input type="email" id="email" disabled>
+
+        <button onclick="updateProfile()">💾 Update Profile</button>
+        <button onclick="resetPassword()">🔐 Reset Password</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
+<!-- Profile logic -->
+<script type="module" src="./js/profile.js"></script>
+
+<!-- Dashboard logic -->
 <script src="./js/dashboard.js"></script>
+
 </body>
 </html>

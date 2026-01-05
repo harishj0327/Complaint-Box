@@ -73,7 +73,7 @@ filterType.addEventListener("change", () => {
     filterValue.style.display = "none";
     renderComplaints(allComplaints);
     return;
-  }
+  }        
   filterValue.style.display = "inline-block";
   filterValue.innerHTML = "";
 
