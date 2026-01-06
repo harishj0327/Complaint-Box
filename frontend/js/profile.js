@@ -1,5 +1,8 @@
-import { getAuth, updateProfile, sendPasswordResetEmail }
-from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import {
+  getAuth,
+  updateProfile as firebaseUpdateProfile,
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
 const auth = getAuth();
 
@@ -8,13 +11,18 @@ window.updateProfile = async function () {
   const user = auth.currentUser;
   const newName = document.getElementById("name").value.trim();
 
+  if (!user) {
+    alert("User not logged in");
+    return;
+  }
+
   if (!newName) {
     alert("Name cannot be empty");
     return;
   }
 
   try {
-    await updateProfile(user, {
+    await firebaseUpdateProfile(user, {
       displayName: newName
     });
 
@@ -28,6 +36,11 @@ window.updateProfile = async function () {
 window.resetPassword = async function () {
   const user = auth.currentUser;
 
+  if (!user) {
+    alert("User not logged in");
+    return;
+  }
+
   try {
     await sendPasswordResetEmail(auth, user.email);
     alert("📧 Password reset email sent");
@@ -35,8 +48,6 @@ window.resetPassword = async function () {
     alert(err.message);
   }
 };
-
-/* Back */
 window.goBack = function () {
   window.location.href = "dashboard.html";
 };

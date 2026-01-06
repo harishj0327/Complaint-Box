@@ -20,6 +20,8 @@ fetch("http://127.0.0.1:8000/all-complaints")
   .then(res => res.json())
   .then(data => {
     allComplaints = data;
+
+    // ✅ LOAD ALL COMPLAINTS ON PAGE OPEN
     renderComplaints(allComplaints);
   });
 
@@ -64,18 +66,17 @@ const filterType = document.getElementById("filterType");
 const filterValue = document.getElementById("filterValue");
 
 filterType.addEventListener("change", () => {
-  if (!filterType.value) {
-    filterValue.style.display = "none";
-    return;
-  }
-  // ✅ ALL COMPLAINTS
+
+  filterValue.style.display = "none";
+  filterValue.innerHTML = "";
+
+  // ✅ ALL COMPLAINTS OPTION
   if (filterType.value === "all") {
-    filterValue.style.display = "none";
     renderComplaints(allComplaints);
     return;
-  }        
+  }
+
   filterValue.style.display = "inline-block";
-  filterValue.innerHTML = "";
 
   if (filterType.value === "priority") {
     ["High", "Medium", "Low"].forEach(v =>

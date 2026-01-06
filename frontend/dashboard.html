@@ -29,13 +29,10 @@
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    window.loggedInEmail = null;
-
     onAuthStateChanged(auth, (user) => {
       if (!user) {
         window.location.href = "login.html";
       } else {
-        window.loggedInEmail = user.email;
         if (window.loadMyComplaints) {
           window.loadMyComplaints();
         }
@@ -58,53 +55,25 @@
   <div class="sidebar">
     <h2>📊 Dashboard</h2>
     <a href="complaint.html">➕ New Complaint</a>
-    <a href="#" onclick="showDashboard()">📋 My Complaints</a>
-    <a href="#" onclick="showProfile()">👤 Profile</a>
+    <a href="#">📋 My Complaints</a>
+    <a href="profile.html">👤 Profile</a>
     <a href="#" onclick="logout()">🚪 Logout</a>
   </div>
 
-  <!-- MAIN AREA -->
+  <!-- MAIN -->
   <div class="main">
 
-    <!-- DASHBOARD VIEW (default) -->
-    <div id="dashboardView" style="display:flex; width:100%; height:100%;">
-      
-      <div class="list">
-        <h3>My Complaints</h3>
-      </div>
-
-      <div id="map"></div>
-
+    <!-- COMPLAINT LIST -->
+    <div class="list">
+      <h3>My Complaints</h3>
     </div>
 
-    <!-- PROFILE VIEW (hidden) -->
-    <div
-      id="profileView"
-      style="display:none; width:100%; height:100%; justify-content:center; align-items:flex-start;"
-    >
-      <div class="profile-card">
-        <h2>👤 My Profile</h2>
-        <p class="subtitle">Manage your account details</p>
-
-        <label>Name</label>
-        <input type="text" id="name" placeholder="Your name">
-
-        <label>Email</label>
-        <input type="email" id="email" disabled>
-
-        <button onclick="updateProfile()">💾 Update Profile</button>
-        <button onclick="resetPassword()">🔐 Reset Password</button>
-      </div>
-    </div>
+    <!-- MAP -->
+    <div id="map"></div>
 
   </div>
 </div>
 
-<!-- Profile logic -->
-<script type="module" src="./js/profile.js"></script>
-
-<!-- Dashboard logic -->
 <script src="./js/dashboard.js"></script>
-
 </body>
 </html>

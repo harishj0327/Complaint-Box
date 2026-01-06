@@ -103,3 +103,63 @@ body {
   flex: 1;
   height: 100%;               /* 🔥 MUST HAVE */
 }
+
+.profile-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  margin-top: 40px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.profile-card label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.profile-card input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+}
+
+.profile-card button {
+  margin-top: 14px;
+  width: 100%;
+}
+/* Filters container */
+.filters {
+  display: flex;
+  gap: 10px;              /* space between dropdowns */
+  margin: 10px 0 20px;
+}
+
+/* Both dropdowns same width */
+/* Ensure filter dropdowns fit perfectly */
+.filters select {
+  flex: 1;
+  min-width: 0;              /* ⭐ IMPORTANT */
+  padding: 8px 12px;         /* ⭐ proper padding */
+  box-sizing: border-box;    /* ⭐ ensures padding stays inside */
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: white;
+}
+
+/* Handle long email text inside dropdown */
+.filters select option {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;   /* ⭐ prevents overflow */
+}
+
+
+/* When second filter is hidden, first takes full width */
+.filters .filter-value {
+  display: none;
+}
+
