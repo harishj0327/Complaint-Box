@@ -99,4 +99,9 @@ window.loadMyComplaints = async function () {
   }
 };
 
+window.addEventListener("resize", () => {
+  if (map) {
+    map.invalidateSize();
+  }
+});
 

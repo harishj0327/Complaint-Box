@@ -162,4 +162,47 @@ body {
 .filters .filter-value {
   display: none;
 }
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* Dashboard layout */
+  .dashboard {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes top bar */
+  .sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+
+  .sidebar a {
+    margin: 0;
+    font-size: 14px;
+  }
+
+  /* Main content stacks */
+  .main {
+    flex-direction: column;
+  }
+
+  /* Complaint list full width */
+  .list {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Map smaller height */
+  #map {
+    height: 300px;
+    width: 100%;
+  }
+}
+input, select, button {
+  max-width: 100%;
+  box-sizing: border-box;
+}
 

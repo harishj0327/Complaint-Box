@@ -109,3 +109,8 @@ filterValue.addEventListener("change", () => {
 
   renderComplaints(filtered);
 });
+window.addEventListener("resize", () => {
+  if (map) {
+    map.invalidateSize();
+  }
+});
