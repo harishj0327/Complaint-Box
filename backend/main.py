@@ -22,11 +22,19 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # -------------------- FIREBASE --------------------
+import os
+import json
+
 if not firebase_admin._apps:
-    cred = credentials.Certificate("firebase_key.json")
+    firebase_key = os.environ.get("FIREBASE_KEY")
+
+    if not firebase_key:
+        raise RuntimeError("FIREBASE_KEY environment variable not set")
+
+    cred = credentials.Certificate(json.loads(firebase_key))
     initialize_app(cred)
+
 
 db = firestore.client()
 
