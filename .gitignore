@@ -1,6 +1,6 @@
 venv/
 __pycache__/
-*.pkl
+
 .env
 backend/firebase_key.json
 backend/uploads/
