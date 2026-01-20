@@ -23,20 +23,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 # -------------------- FIREBASE --------------------
-import os
-import json
+# -------------------- FIREBASE --------------------
+import os, json, base64, firebase_admin
+from firebase_admin import credentials, firestore, auth as firebase_auth, initialize_app
 
 if not firebase_admin._apps:
-    firebase_key = os.environ.get("FIREBASE_KEY")
+    firebase_key_b64 = os.environ.get("FIREBASE_KEY_BASE64")
+    if not firebase_key_b64:
+        raise RuntimeError("FIREBASE_KEY_BASE64 not set")
 
-    if not firebase_key:
-        raise RuntimeError("FIREBASE_KEY environment variable not set")
-
-    cred = credentials.Certificate(json.loads(firebase_key))
+    firebase_json = base64.b64decode(firebase_key_b64).decode("utf-8")
+    cred = credentials.Certificate(json.loads(firebase_json))
     initialize_app(cred)
 
-
 db = firestore.client()
+
+
 
 # -------------------- CLOUDINARY (HARDCODED) --------------------
 cloudinary.config(
