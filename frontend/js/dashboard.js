@@ -39,7 +39,7 @@ window.loadMyComplaints = async function () {
 
   try {
     const res = await fetch(
-      `http://127.0.0.1:8000/my-complaints?user_email=${email}`
+      `https://complaint-box-zenh.onrender.com/my-complaints?user_email=${email}`
     );
     const complaints = await res.json();
 

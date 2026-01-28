@@ -16,7 +16,7 @@ function focusComplaint(lat, lng) {
 }
 
 /* ---------------- FETCH ALL COMPLAINTS ---------------- */
-fetch("http://127.0.0.1:8000/all-complaints")
+fetch("https://complaint-box-zenh.onrender.com/all-complaints")
   .then(res => res.json())
   .then(data => {
     allComplaints = data;

@@ -76,7 +76,7 @@ async function submitComplaint() {
   if (photo) formData.append("photo", photo);
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/complaint", {
+    const res = await fetch("https://complaint-box-zenh.onrender.com/complaint", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`

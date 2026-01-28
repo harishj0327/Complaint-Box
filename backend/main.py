@@ -40,13 +40,14 @@ db = firestore.client()
 
 
 
-# -------------------- CLOUDINARY (HARDCODED) --------------------
+# -------------------- CLOUDINARY (SAFE) --------------------
 cloudinary.config(
-    cloud_name="dc2hsf2en",
-    api_key="586174424997459",
-    api_secret="hNaGl9e0Abi-7nzTzpn5OlM8w6k",
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET"),
     secure=True
 )
+
 
 # -------------------- TOKEN VERIFY --------------------
 def verify_token(authorization: str = Header(None)):
