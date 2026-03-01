@@ -48,7 +48,6 @@ cloudinary.config(
     secure=True
 )
 
-
 # -------------------- TOKEN VERIFY --------------------
 def verify_token(authorization: str = Header(None)):
     if not authorization:
