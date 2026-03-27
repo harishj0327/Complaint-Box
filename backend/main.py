@@ -1,3 +1,8 @@
+from dotenv import load_dotenv
+import os
+
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
+print("ENV VALUE:", os.getenv("FIREBASE_KEY_BASE64"))
 from fastapi import FastAPI, File, UploadFile, Form, Depends, HTTPException, Header
 from fastapi.middleware.cors import CORSMiddleware
 from datetime import datetime
@@ -24,6 +29,8 @@ app.add_middleware(
 )
 # -------------------- FIREBASE --------------------
 # -------------------- FIREBASE --------------------
+from dotenv import load_dotenv
+load_dotenv()
 import os, json, base64, firebase_admin
 from firebase_admin import credentials, firestore, auth as firebase_auth, initialize_app
 
